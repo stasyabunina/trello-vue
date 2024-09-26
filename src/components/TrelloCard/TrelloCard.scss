@@ -1,0 +1,135 @@
+@import "../../scss/mixins";
+
+.column {
+	&__card {
+		position: relative;
+		align-items: flex-start;
+		margin-bottom: 15px;
+		border-bottom: 1px solid rgb(211, 211, 211);
+		border-radius: 5px;
+		padding: 12px;
+		background-color: #fff;
+
+		@include flex-column;
+
+		&:last-child {
+			margin-bottom: 25px;
+		}
+	}
+
+	&__text {
+		margin-bottom: 15px;
+		word-break: break-word;
+	}
+
+	&__menu-btn {
+		width: 21px;
+		height: 21px;
+
+		svg {
+			width: 21px;
+			height: 21px;
+			transform: rotate(180deg);
+
+			path {
+				transition: stroke 0.1s ease-in-out;
+			}
+		}
+
+		&:focus-visible {
+			outline: 2px rgb(66, 66, 66) solid;
+			outline-offset: 2px;
+		}
+	}
+
+	&__menu {
+		@include menu;
+
+		top: 100%;
+		background-color: #fff;
+		opacity: 0;
+		visibility: hidden;
+		transform: scale(0.8) translate(-50px, -20px);
+		transition-property: opacity, visibility, transform;
+		transition-duration: 0.15s;
+		transition-timing-function: ease-in-out;
+
+		&--shown {
+			opacity: 1;
+			visibility: visible;
+			transform: none;
+		}
+	}
+
+	&__menu-item {
+		border-bottom: 1px solid rgb(209, 209, 209);
+		background-color: #fff;
+
+		&:last-child {
+			border-bottom: none;
+		}
+	}
+
+	&__menu-item-btn {
+		border-radius: 0;
+		padding: 13px 15px;
+		width: 100%;
+		text-align: left;
+		color: #000;
+	}
+
+	&__tags {
+		@include flex-row;
+
+		flex-wrap: wrap;
+		margin-bottom: 8px;
+	}
+
+	&__edit-card-form {
+		margin-bottom: 15px;
+	}
+
+	&__edit-card-label {
+		margin-bottom: 10px;
+		width: 100%;
+
+		@include flex-column;
+	}
+
+	&__edit-card-input {
+		outline: none;
+		border: none;
+		border-radius: 5px;
+		padding: 13px;
+		width: 100%;
+		min-height: 100px;
+		background-color: #f5f5f5;
+		resize: none;
+
+		&::placeholder {
+			color: rgba(130, 130, 130, 0.719);
+		}
+
+		&--error {
+			outline: solid #f00 1px;
+		}
+	}
+
+	&__edit-card-btn {
+		margin-right: 10px;
+		padding: 10px 15px;
+		font-weight: 600;
+		color: #fff;
+		background-color: #d3d3d3;
+	}
+
+	&__edit-card-cancel {
+		font-size: 38px;
+		color: rgba(130, 130, 130, 0.719);
+		transform: rotate(45deg);
+	}
+
+	&__edit-card-btns {
+		@include flex-row;
+	}
+}

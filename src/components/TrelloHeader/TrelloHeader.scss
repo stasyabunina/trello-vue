@@ -1,0 +1,290 @@
+@import "../../scss/mixins";
+@import "../../scss/variables";
+
+.header {
+	padding: 20px 0 40px;
+
+	@media (width <=576px) {
+		padding: 10px 0 20px;
+	}
+
+	&__wrapper {
+		@include flex-row;
+
+		align-items: stretch;
+		justify-content: space-between;
+	}
+
+	&__left {
+		@include flex-row;
+
+		align-items: stretch;
+	}
+
+	&__right {
+		@include flex-row;
+
+		align-items: stretch;
+	}
+
+	&__name {
+		@include flex-row;
+
+		font-weight: 600;
+		font-size: 21px;
+		color: #fff;
+
+		@media (width <=576px) {
+			display: none;
+		}
+	}
+
+	&__btn {
+		background: #f3f5f7;
+	}
+
+	&__add-tag-btn {
+		justify-content: center;
+		margin-right: 15px;
+		padding: 0 10px;
+
+		@include flex-row;
+
+		svg {
+			width: 22px;
+			height: 22px;
+			transform: rotate(-120deg);
+			transition: transform 0.1s ease-in-out;
+		}
+
+		&--flipped {
+			svg {
+				transform: rotate(-240deg);
+			}
+		}
+	}
+
+	&__add-column-btn {
+		margin-right: 15px;
+		padding: 0 13px;
+
+		@include flex-row;
+
+		span {
+			font-size: 26px;
+		}
+	}
+
+	&__change-background-btn {
+		margin-right: 15px;
+		padding: 7px;
+
+		@include flex-row;
+
+		svg {
+			display: flex;
+			min-width: 25px;
+			min-height: 25px;
+			max-width: 25px;
+			max-height: 25px;
+
+			&:first-child {
+				margin-right: 5px;
+			}
+
+			&:last-child {
+				min-width: 15px;
+				min-height: 15px;
+				max-width: 15px;
+				max-height: 15px;
+			}
+		}
+	}
+
+	&__clear-btn {
+		padding: 7px;
+
+		svg {
+			display: flex;
+			width: 22px;
+			height: 22px;
+		}
+	}
+
+	&__arrow-svg {
+		&--flipped {
+			transform: rotate(180deg);
+		}
+	}
+
+	&__tag-menu {
+		@include menu;
+
+		background-color: #fff;
+		opacity: 0;
+		visibility: hidden;
+		transform: scale(0.8) translate(-50px, -20px);
+		transition-property: opacity, visibility, transform;
+		transition-duration: 0.2s;
+		transition-timing-function: ease-in-out;
+
+		&--shown {
+			opacity: 1;
+			visibility: visible;
+			transform: none;
+		}
+	}
+
+	&__tag-form-wrapper {
+		padding: 16px 14px;
+	}
+
+	&__tag-form {
+		align-items: stretch;
+		width: 100%;
+
+		@include flex-row;
+	}
+
+	&__tag-btns {
+		margin-left: auto;
+
+		@include flex-row;
+	}
+
+	&__tag-form-btn {
+		margin-right: 12px;
+		outline: none;
+
+		&:focus-visible {
+			span {
+				border-color: $color_primary;
+			}
+
+			outline: none;
+		}
+
+		&:hover {
+			span {
+				border-color: $color_primary;
+			}
+		}
+
+		span {
+			display: block;
+			border-bottom: 3px solid #000;
+			border-left: 3px solid #000;
+			width: 11px;
+			height: 6px;
+			transform: rotate(-50deg);
+			transition: border-color 0.1s ease-in-out;
+		}
+	}
+
+	&__tag-name-input {
+		margin-right: 7px;
+		outline: 0;
+		border: none;
+		border-radius: 5px;
+		padding: 11px;
+		width: 65%;
+		background-color: #f5f5f5;
+
+		&--error {
+			outline: solid #f00 1px;
+		}
+	}
+
+	&__tag-item {
+		justify-content: space-between;
+		padding: 13px;
+
+		@include flex-row;
+	}
+
+	&__tag-name {
+		font-weight: 600;
+		color: #fff;
+	}
+
+	&__tag-remove {
+		outline: none;
+		font-size: 28px;
+		color: #fff;
+		transform: rotate(45deg);
+		transition: color 0.1s ease-in-out;
+
+		&:focus-visible {
+			color: #000;
+		}
+
+		&:hover {
+			color: #000;
+		}
+	}
+
+	&__header-tag-label {
+		display: block;
+
+		@include flex-row;
+	}
+
+	&__tag-color-input {
+		cursor: pointer;
+	}
+
+	&__tag-form-cancel {
+		outline: none;
+		font-size: 28px;
+		transform: rotate(45deg);
+		transition: color 0.1s ease-in-out;
+
+		&:focus-visible {
+			color: $color_primary;
+		}
+
+		&:hover {
+			color: $color_primary;
+		}
+	}
+
+	&__background-list {
+		@include menu;
+
+		background-color: #fff;
+		opacity: 0;
+		visibility: hidden;
+		transform: scale(0.8) translate(-50px, -20px);
+		transition-property: opacity, visibility, transform;
+		transition-duration: 0.15s;
+		transition-timing-function: ease-in-out;
+
+		&--shown {
+			opacity: 1;
+			visibility: visible;
+			transform: none;
+		}
+	}
+
+	&__background-color-label {
+		display: block;
+		padding: 13px 15px;
+		cursor: pointer;
+
+		span {
+			margin-right: 7px;
+		}
+	}
+
+	&__background-color {
+		cursor: pointer;
+	}
+
+	&__background-btn {
+		border-radius: 0;
+		padding: 13px 15px;
+		width: 100%;
+		text-align: left;
+		color: #000;
+	}
+}

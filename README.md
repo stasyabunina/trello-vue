@@ -7,7 +7,8 @@
 ![](trello-vue.gif)
 
 ## Для проекта использовалось следующее
-+ [Vite](https://vitejs.dev/)
-+ Vue.js
-+ SCSS/Sass
-+ и другое...
+
+- [Vite](https://vitejs.dev/)
+- Vue.js
+- SCSS/Sass
+- и другое...

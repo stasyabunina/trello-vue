@@ -1,0 +1,41 @@
+@import "../../scss/mixins";
+
+.column {
+	&__tag {
+		overflow: hidden;
+		margin-right: 7px;
+		border-radius: 8px;
+		width: 45px;
+		height: 13px;
+		background-color: #d3d3d3;
+		cursor: auto;
+
+		&--opened {
+			border-radius: 5px;
+			padding: 1px 13px;
+			width: auto;
+			height: auto;
+		}
+
+		&:last-child {
+			margin-right: 0;
+		}
+	}
+
+	&__tag-content {
+		@include flex-row;
+	}
+
+	&__tag-name {
+		margin-right: 10px;
+		font-weight: 600;
+		font-size: 15px;
+		color: #fff;
+	}
+
+	&__tag-btn {
+		font-size: 28px;
+		color: #fff;
+		transform: rotate(45deg);
+	}
+}

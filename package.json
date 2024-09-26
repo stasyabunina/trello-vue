@@ -1,0 +1,40 @@
+{
+	"name": "trello-vue",
+	"private": true,
+	"version": "0.0.0",
+	"type": "module",
+	"scripts": {
+		"format": "prettier --write .",
+		"stylelint": "npx stylelint src/**/*.scss",
+		"style-fix": "npx stylelint src/**/*.scss --fix",
+		"eslint": "eslint src/**/*.{js,vue} --fix",
+		"test": "npm run style-fix && npm run eslint",
+		"autoprefixer": "npx postcss dist/**/*.css --use autoprefixer -d dist/assets/",
+		"dev": "npm run format && vite",
+		"build": "npm run format && npm run test && vite build",
+		"preview": "vite preview"
+	},
+	"dependencies": {
+		"vue": "^3.4.37",
+		"vuex": "^4.0.2"
+	},
+	"devDependencies": {
+		"@vitejs/plugin-vue": "^5.1.2",
+		"autoprefixer": "^10.4.20",
+		"eslint": "^9.11.1",
+		"eslint-config-prettier": "^9.1.0",
+		"eslint-plugin-jsdoc": "^50.2.5",
+		"eslint-plugin-prettier-vue": "^5.0.0",
+		"eslint-plugin-vue": "^9.28.0",
+		"globals": "^15.9.0",
+		"postcss": "^8.4.47",
+		"postcss-cli": "^11.0.0",
+		"prettier": "^3.3.3",
+		"sass": "^1.79.3",
+		"stylelint": "^16.9.0",
+		"stylelint-config-standard-scss": "^13.1.0",
+		"stylelint-order": "^6.0.4",
+		"vite": "^5.4.1",
+		"vite-plugin-minify": "^2.0.0"
+	}
+}

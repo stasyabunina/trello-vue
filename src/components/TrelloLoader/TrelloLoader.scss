@@ -1,0 +1,27 @@
+.loader-wrapper {
+	position: fixed;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 100vw;
+	height: 100vh;
+}
+
+.loader {
+	border: 8px solid #ebebebd8;
+	border-top: 8px solid #f4aeae;
+	border-radius: 50%;
+	width: 55px;
+	height: 55px;
+	animation: spin 2s linear infinite;
+}
+
+@keyframes spin {
+	0% {
+		transform: rotate(0deg);
+	}
+
+	100% {
+		transform: rotate(360deg);
+	}
+}

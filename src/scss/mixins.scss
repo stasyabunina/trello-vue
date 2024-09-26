@@ -1,0 +1,19 @@
+@mixin flex-row {
+	display: flex;
+	align-items: center;
+}
+
+@mixin flex-column {
+	display: flex;
+	flex-direction: column;
+}
+
+@mixin menu {
+	position: absolute;
+	left: 0;
+	top: 0;
+	z-index: 100;
+	overflow: hidden;
+	border-radius: 5px;
+	box-shadow: 20px 20px 40px -6px rgba(0, 0, 0, 0.047);
+}

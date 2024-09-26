@@ -1,0 +1,132 @@
+@import "./variables";
+@import "./mixins";
+
+html {
+	box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+	box-sizing: inherit;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+	margin: 0;
+	font-weight: 400;
+}
+
+a {
+	color: $color_primary;
+}
+
+ul {
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+}
+
+img,
+svg {
+	max-width: 100%;
+}
+
+body {
+	position: relative;
+	overflow-x: hidden;
+	height: 100vh;
+	min-width: 320px;
+	font-family: "Arial", sans-serif;
+	font-weight: 400;
+	font-size: 18px;
+	line-height: 1.4;
+	color: #121212;
+	background-color: #fff;
+}
+
+.visually-hidden {
+	position: absolute;
+	overflow: hidden;
+	margin: -1px;
+	border: 0;
+	padding: 0;
+	width: 1px;
+	height: 1px;
+	clip: rect(0 0 0 0);
+}
+
+.container {
+	margin: 0 auto;
+	padding: 0 50px;
+	max-width: 1366px;
+
+	@media (width <=768px) {
+		padding: 0 35px;
+	}
+
+	@media (width <=576px) {
+		padding: 0 15px;
+	}
+}
+
+button {
+	border: none;
+	border-radius: 5px;
+	padding: 0;
+	background-color: transparent;
+	cursor: pointer;
+}
+
+.footer {
+	justify-content: center;
+	padding: 20px;
+	font-size: 0.6em;
+	color: rgba(255, 255, 255, 0.388);
+
+	@include flex-row;
+
+	.link {
+		color: rgba(255, 255, 255, 0.388);
+	}
+}
+
+::selection {
+	color: #fff;
+	background: $color_primary;
+}
+
+.no-columns-text {
+	display: block;
+	padding: 150px 0;
+	width: 100%;
+	text-align: center;
+	color: rgba(255, 255, 255, 0.675);
+}
+
+.error {
+	display: block;
+	padding: 5px 0;
+	color: $color_secondary;
+}
+
+.no-cards-text {
+	display: block;
+	padding: 60px 0;
+	width: 100%;
+	text-align: center;
+	color: rgba(0, 0, 0, 0.555);
+}
+
+.hidden {
+	display: none;
+}
+
+.transparent {
+	opacity: 0;
+}
